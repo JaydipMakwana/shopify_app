@@ -8,7 +8,7 @@ ShopifyApp.configure do |config|
   config.embedded_app = false
   config.after_authenticate_job = false
   config.api_version = "2020-01"
-  config.session_repository = 'ShopifyApp::InMemorySessionStore'
+  config.session_repository = 'Shop'
 end
 
 # ShopifyApp::Utils.fetch_known_api_versions                        # Uncomment to fetch known api versions from shopify servers on boot
