@@ -5,4 +5,8 @@ class HomeController < AuthenticatedController
     @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
     @webhooks = ShopifyAPI::Webhook.find(:all)
   end
+
+  def customers
+    @customers = ShopifyAPI::Customer.find(:all)
+  end
 end
