@@ -1,5 +1,5 @@
 ShopifyApp.configure do |config|
-  config.application_name = "DemoIntegrationApp"
+  config.application_name = "HerokuTesting"
   config.api_key = Rails.application.credentials.shopify[:api_key]
   config.secret = Rails.application.credentials.shopify[:secret_key]
   config.old_secret = ""
