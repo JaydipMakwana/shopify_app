@@ -15,6 +15,6 @@ module ShopifyAppDemo
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    config.hosts << "ffa1a2a6.ngrok.io"
+    config.hosts << "shopify-integration-app.herokuapp.com"
   end
 end
