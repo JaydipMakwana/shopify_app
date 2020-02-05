@@ -9,6 +9,7 @@ class HomeController < AuthenticatedController
   def customers
     @customers = ShopifyAPI::Customer.find(:all)
     respond_to do |format|
+      format.html
       format.json { render json: @customers  }
     end
   end
