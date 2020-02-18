@@ -5,7 +5,7 @@ class ImportCustomer
   ADDRESS_COLUMNS = %w[company address1 address2 city province country zip province_code country_code country_name default].freeze
   attr_reader :common_url, :version, :token, :file
   HEADERS = {
-    content_type: :json, accept: :json, 'X-Shopify-Access-Token': Rails.application.credentails.shopify[:token]
+    content_type: :json, accept: :json, 'X-Shopify-Access-Token': Rails.application.credentials.shopify[:token]
   }.freeze
 
   def initialize(file, common_url, version)
@@ -24,6 +24,7 @@ class ImportCustomer
       customer_hash = converted_hash.slice!(*ADDRESS_COLUMNS)
       customer_hash['addresses'] = [converted_hash]
       customer = { "customer" => customer_hash }
+      binding.pry
       response = RestClient.post(url, customer.to_json, HEADERS)
       # c = ShopifyAPI::Customer.create(customer)
     end
