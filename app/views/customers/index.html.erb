@@ -7,3 +7,7 @@
 </ul>
 
 <hr>
+<%= form_tag import_customers_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag 'Submit'%>
+<% end %>

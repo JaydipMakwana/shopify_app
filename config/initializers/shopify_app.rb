@@ -3,7 +3,7 @@ ShopifyApp.configure do |config|
   config.api_key = Rails.application.credentials.shopify[:api_key]
   config.secret = Rails.application.credentials.shopify[:secret_key]
   config.old_secret = ""
-  config.scope = "read_products, write_products, read_customers, write_customers, read_orders, write_orders, read_product_listings" # Consult this page for more scope options:
+  config.scope = "read_products, write_products, read_customers, write_customers, read_orders, write_orders, read_product_listings, read_price_rules, write_price_rules, read_discounts, write_discounts" # Consult this page for more scope options:
                                  # https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
   config.embedded_app = false
   config.after_authenticate_job = false
