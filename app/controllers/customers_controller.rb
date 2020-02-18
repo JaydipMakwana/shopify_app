@@ -9,6 +9,6 @@ class CustomersController < ApplicationController
   end
 
   def import
-    import_customer = ImportCustomer.new(params[:file], @url, @api_version, @token).import
+    import_customer = ImportCustomer.new(params[:file], @url, @api_version).import
   end
 end

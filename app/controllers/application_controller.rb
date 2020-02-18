@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
 
   def common_url_and_token
     @url = "https://#{@shop_session.domain}"
-    @token = @shop_session.token
     @api_version = @shop_session.api_version.handle
   end
 end
