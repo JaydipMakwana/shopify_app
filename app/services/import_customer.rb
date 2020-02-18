@@ -2,8 +2,10 @@ require 'csv'
 require 'rest_client'
 
 class ImportCustomer
+  attr_reader :common_url, :version, :file
+
   ADDRESS_COLUMNS = %w[company address1 address2 city province country zip province_code country_code country_name default].freeze
-  attr_reader :common_url, :version, :token, :file
+
   HEADERS = {
     content_type: :json, accept: :json, 'X-Shopify-Access-Token': Rails.application.credentials.shopify[:token]
   }.freeze
@@ -12,7 +14,6 @@ class ImportCustomer
     @file = file
     @common_url = common_url
     @version = version
-    @token = token
   end
 
   def import
